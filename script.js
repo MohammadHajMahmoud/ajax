@@ -1,12 +1,10 @@
 async function get(){
-  let response = await fetch("https://newsapi.org/v2/top-headlines?country=eg&category=sports&apiKey=58f3c1a6b6184fc48e7e4da47112e798")
+  let response = await fetch("https://gnews.io/api/v4/top-headlines?token=d2a4d6c8730edfaa30d472e847e96736&lang=en")
   let data =await response.json();
   showPost(data.articles);
 }
 
 get();
-
-
 function showPost(data){
   
     let htm1Data = document.querySelector(".data");
@@ -16,7 +14,7 @@ function showPost(data){
 toHtml +=`
 <div class="card" >
 <div class="card-header">
-<img src="${d.urlToImage}"<img>
+<img src="${d.image}"<img>
 </div>
 <div class="card-body">
 <p>${d.title}
